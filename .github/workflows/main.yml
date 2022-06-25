@@ -46,7 +46,7 @@ jobs:
         # Docker build
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         # Unit test
-        docker run -d -p 8080:80 --name $ECR_REGISTRY $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker run -d -p 8080:80 --name cat $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker ps
         echo "Pause for 10 seconds to let container start"
         sleep 10
@@ -64,7 +64,7 @@ jobs:
         # Docker build
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         # Unit test
-        docker run -d -p 8081:80 --name $ECR_REGISTRY $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker run -d -p 8081:80 --name dog $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker ps
         echo "Pause for 10 seconds to let container start"
         sleep 10
