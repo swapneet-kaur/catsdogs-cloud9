@@ -130,11 +130,10 @@ resource "aws_eip" "static_eip" {
 }
 
 
-resource "aws_ecr_repository" "foo" {
-  name                 = "bar"
-  image_tag_mutability = "MUTABLE"
+resource "aws_ecr_repository" "cat" {
+  name = "cat"
+}
 
-  image_scanning_configuration {
-    scan_on_push = true
-  }
+resource "aws_ecr_repository" "dog" {
+  name = "dog"
 }
