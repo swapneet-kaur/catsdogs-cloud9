@@ -58,12 +58,12 @@ resource "aws_instance" "my_amazon" {
   }
   user_data = <<-EOF
   #! /bin/sh
-yum update -y
-amazon-linux-extras install docker
-service docker start
-usermod -a -G docker ec2-user
-chkconfig docker on
-EOF
+   yum update -y
+   amazon-linux-extras install docker
+   service docker start
+   usermod -a -G docker ec2-user
+   chkconfig docker on
+   EOF
   tags = merge(local.default_tags,
     {
       "Name" = "${local.name_prefix}-Amazon-Linux"
